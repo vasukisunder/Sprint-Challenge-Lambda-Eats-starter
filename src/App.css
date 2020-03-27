@@ -1,38 +1,204 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-image: url("https://www.nicepng.com/png/full/148-1483068_pizza-pattern-transparent.png");
+  background-repeat: repeat;
+}
+
+
+
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
+  background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 90%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-right: 3%;
+  padding-left: 1%;
+  margin-bottom: 2%;
+  box-shadow: 0 0 5px 5px  #ffdc7d;
+
+}
+header{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  text-decoration: none;
+
+
 }
 
-.App-link {
-  color: #61dafb;
+h1{
+  color: #ffdc7d;
+  font-size: 50px;
+  background-color: white;
+  padding: 2%;
+  box-shadow: 0 0 5px 5px  #ffdc7d;
+
+}
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px 0;
+  font-size: 1.4rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p{
+  font-size: 1.4rem;
+
+}
+
+button#order{
+  padding: 10%;
+  font-size: 20px;
+  width: 100%;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  margin: 5px 0 0;
+  display: block;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  background-color: white;
+}
+select {
+  height: 40px;
+  width: 325px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #ffdc7d;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ffdc7d;
+}
+
+input:placeholder {
+  color: #a8b2b2;
+}
+
+button {
+  width: 150px;
+  display: inline-block;
+  padding: 8px 11px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  outline: none;
+  background-color: #ffdc7d;
+  background-image: linear-gradient(to right, #ffdc7d, #edc24e);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-image: none;
+  background-color: #edc045;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+  background-image: none;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.1);
+  cursor: not-allowed;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  font-size: 1.4rem;
+
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #edc045;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+a{
+  text-decoration: none;
+  color: #edc045;
+}
+
+.error{
+  color: red;
 }
