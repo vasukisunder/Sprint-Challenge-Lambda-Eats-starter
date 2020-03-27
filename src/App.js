@@ -1,11 +1,29 @@
 import React from "react";
+import Form from "./Form";
+import {Route, Link} from 'react-router-dom';
+import "./App.css";
 
-const App = () => {
+export default function App(){
   return (
-    <>
-      <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
-    </>
-  );
-};
-export default App;
+    <div>
+      <header>
+      <h1 id="none">
+        <Link to="/">
+       Lambda Eats
+
+        </Link></h1>
+        
+        <Link to="/pizza">
+          <button id="order"type="button">
+            Order a pizza!
+          </button>
+        </Link>
+      </header>
+      
+      <Route exact path="/pizza">
+        <Form />
+      </Route>
+    </div>
+  )
+}
+
